@@ -1,0 +1,120 @@
+{
+  "id": "library-evidence",
+  "version": "1",
+  "title": "The library at a crossroads",
+  "description": "One small budget. Two persuasive proposals. What would count as good evidence?",
+  "objectives": [
+    "Recognise sampling bias",
+    "Separate association from causation",
+    "Choose a proportionate pilot"
+  ],
+  "start": "arrival",
+  "nodes": [
+    {
+      "id": "arrival",
+      "title": "A decision for Monday",
+      "body": "You are advising a fictional neighbourhood library. There is £3,000 for either evening opening hours or a weekend digital-skills club. The committee wants a recommendation. All figures in this story are invented for learning.",
+      "options": [
+        {
+          "id": "survey",
+          "label": "Read the visitor survey",
+          "next": "survey"
+        },
+        {
+          "id": "numbers",
+          "label": "Inspect attendance records",
+          "next": "records"
+        }
+      ]
+    },
+    {
+      "id": "survey",
+      "title": "A very confident survey",
+      "body": "Of 40 people surveyed inside the library on Tuesday morning, 32 prefer evening hours. A volunteer says: ‘That is 80% of the community.’ But people who cannot visit during the day were never asked.",
+      "options": [
+        { "id": "continue", "label": "Examine the claim", "next": "sampling" }
+      ]
+    },
+    {
+      "id": "records",
+      "title": "The numbers tell a story — but which one?",
+      "body": "Attendance rose during a month with a digital-skills event. That month also had school holidays and a new local bus route. The records show who attended, not why attendance changed.",
+      "options": [
+        {
+          "id": "survey",
+          "label": "Check who the survey represents",
+          "next": "sampling"
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "title": "Who is missing from the evidence?",
+      "body": "Which interpretation of the Tuesday survey is most defensible?",
+      "quiz": {
+        "correctOption": "limited",
+        "explanation": "A convenience sample of current daytime visitors may miss workers, non-users and people facing access barriers. A large percentage alone does not establish representativeness."
+      },
+      "options": [
+        {
+          "id": "all",
+          "label": "80% proves the whole community prefers evenings",
+          "next": "causation"
+        },
+        {
+          "id": "limited",
+          "label": "It describes respondents; broader outreach is needed",
+          "next": "causation"
+        }
+      ]
+    },
+    {
+      "id": "causation",
+      "title": "Did the event cause the increase?",
+      "body": "Attendance increased in the month of the digital-skills event. What can you conclude from these records alone?",
+      "quiz": {
+        "correctOption": "uncertain",
+        "explanation": "An association cannot isolate the event’s effect. Holidays and transport changes are plausible alternative explanations. A comparison and baseline would strengthen a future evaluation."
+      },
+      "options": [
+        {
+          "id": "certain",
+          "label": "The event definitely caused the increase",
+          "next": "plan"
+        },
+        {
+          "id": "uncertain",
+          "label": "The cause remains uncertain",
+          "next": "plan"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "title": "Make a recommendation",
+      "body": "There is time for a modest pilot before committing the full budget. Which proposal best supports learning while respecting residents?",
+      "quiz": {
+        "correctOption": "pilot",
+        "explanation": "A time-limited pilot with a baseline, outreach to non-users and anonymous feedback can inform a decision. It still cannot guarantee causality or represent every resident."
+      },
+      "options": [
+        {
+          "id": "spend",
+          "label": "Spend everything immediately based on the 80%",
+          "next": "ending"
+        },
+        {
+          "id": "pilot",
+          "label": "Pilot both options, define measures and invite missing voices",
+          "next": "ending"
+        }
+      ]
+    },
+    {
+      "id": "ending",
+      "title": "A recommendation with room to learn",
+      "body": "Your next step is a small, clearly documented pilot: compare participation with a baseline, record access barriers and invite voluntary anonymous feedback. Report uncertainty alongside results. Revisit your choices below: a responsible decision is one you can explain and revise.",
+      "options": []
+    }
+  ]
+}
